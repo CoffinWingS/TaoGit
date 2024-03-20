@@ -89,15 +89,15 @@ else:
 #***************************************************************************************************
  gender_counts = dt['sex'].size()
 
- # Plotting
- plt.figure(figsize=(8, 5))
- plt.plot(gender_counts.index, gender_counts.values, marker='o', linestyle='-')
- plt.title('Counts of Genders')
- plt.xlabel('Gender')
- plt.ylabel('Count')
- plt.grid(True)
- plt.xticks(rotation=45)
- st.pyplot()
+  # Plotting
+  plt.figure(figsize=(8, 5))
+  plt.plot(gender_counts.index, gender_counts.values, marker='o', linestyle='-')
+  plt.title('Counts of Genders')
+  plt.xlabel('Gender')
+  plt.ylabel('Count')
+  plt.grid(True)
+  plt.xticks(rotation=45)
+  st.pyplot()
 
 
 
