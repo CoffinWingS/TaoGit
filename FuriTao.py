@@ -16,8 +16,8 @@ counts = df.groupby('country').size()
 
 # วาดกราฟแท่ง
 plt.bar(counts.index, counts)
-plt.xlabel("ประเทศ")
-plt.ylabel("จำนวนผู้ฆ่าตัวตาย")
+plt.xlabel("Furina For Like")
+plt.ylabel("HuTao for Love")
 
 # แสดงกราฟบน Streamlit
 st.pyplot(plt)
