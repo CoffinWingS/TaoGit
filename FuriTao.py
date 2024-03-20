@@ -53,7 +53,7 @@ df = df[df['year'] <= 2014]
 df_suicides = df.groupby('suicides_no').size()
 
 # สร้างกราฟเส้น
-plt.plot(df['year'],df_suicides.index)
+plt.plot(df['year'])
 plt.xlabel('Year')
 plt.ylabel('Suicide Rate')
 plt.show()
