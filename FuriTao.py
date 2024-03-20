@@ -46,7 +46,19 @@ else:
     st.button("ปิดไปเลย")
 
 #***************************************************************************************************
-df.groupby('year').count()['suicides_no'].plot.line()
+# เลือกข้อมูลปี 1987 ถึง 2014
+df = df[df['year'] >= 1987]
+df = df[df['year'] <= 2014]
+
+# กรองข้อมูลเฉพาะประเทศไทย
+#df = df[df['country'] == 'Thailand']
+
+# สร้างกราฟเส้น
+plt.plot(df['suicides_no'],df['year'])
+plt.xlabel('Year')
+plt.ylabel('Suicide Rate')
+plt.show()
+st.pyplot()
 
 
 
