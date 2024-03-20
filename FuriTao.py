@@ -46,12 +46,15 @@ else:
     st.button("ปิดไปเลย")
 
 #***************************************************************************************************
+st.subheader("โนมโน้มการฆ่าตัวตายในช่วงปี")
+
+
 if(st.button("แสดงโนมโน้มการฆ่าตัวตายในช่วงปี")):
  # นับจำนวนการฆ่าตัวตายในแต่ละปี
  df_year = df.groupby('year').size()
 
  # แสดงกราฟเส้น
- plt.bar(df_year.index, df_year,color='#607d8b', alpha=0.5, hatch='\\\\')
+ plt.bar(df_year.index, df_year,color='#607d8b')
  #plt.plot(df_year.index, df_year)
  plt.xlabel('Year')
  plt.ylabel('Number of Suicides')
