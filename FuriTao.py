@@ -10,23 +10,5 @@ st.write(df.head(10))
 st.subheader("อัตราการฆ่าตัวตายในแต่ละประเทศ")
 
 
-import matplotlib.pyplot as plt
 
-# เลือกเฉพาะประเทศที่ต้องการ
-countries = ["Albania", "Antigua and Barbuda", "Argentina", "Aruba", "Australia", "Australia"]
-df = df[df['country'].isin(countries)]
-
-# กรุ๊ปข้อมูลตามประเทศและนับจำนวนผู้ติดเชื้อ
-df = df.groupby("country").size().reset_index(name="จำนวนผู้ติดเชื้อ")
-
-# เรียงลำดับจำนวนผู้ติดเชื้อจากมากไปน้อย
-df = df.sort_values("จำนวนผู้ติดเชื้อ", ascending=False)
-
-# วาดกราฟแท่ง
-plt.bar(df["country"], df["จำนวนผู้ติดเชื้อ"])
-plt.xlabel("ประเทศ")
-plt.ylabel("จำนวนผู้ติดเชื้อ")
-plt.title("จำนวนผู้ติดเชื้อโควิดในแต่ละประเทศ")
-
-st.pyplot(plt)
 
