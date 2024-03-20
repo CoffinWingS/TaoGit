@@ -69,6 +69,8 @@ if(st.button("แบบกราฟเส้น")):
  
  df_year = df.groupby('year').size()
 
+ plt.style.use('dark_background')
+
  # แสดงกราฟเส้น
  plt.plot(df_year.index, df_year)
  plt.xlabel('Year')
