@@ -89,26 +89,26 @@ else:
 #***************************************************************************************************
 sex_counts = df['sex'].value_counts()
  # แสดงข้อมูลด้วย Streamlit
- st.title('Counts of Gender in Suicide Dataset')
- st.write('Counts of Male and Female in Suicide Dataset')
- st.bar_chart(sex_counts)
+st.title('Counts of Gender in Suicide Dataset')
+st.write('Counts of Male and Female in Suicide Dataset')
+st.bar_chart(sex_counts)
 
  # เพิ่มกราฟเส้นเพื่อแสดงการแยกตามเพศ
- male_data = df[df['sex'] == 'male']
- female_data = df[df['sex'] == 'female']
+male_data = df[df['sex'] == 'male']
+female_data = df[df['sex'] == 'female']
 
- male_counts = male_data['year'].value_counts().sort_index()
- female_counts = female_data['year'].value_counts().sort_index()
+male_counts = male_data['year'].value_counts().sort_index()
+female_counts = female_data['year'].value_counts().sort_index()
 
- fig, ax = plt.subplots()
- ax.plot(male_counts.index, male_counts.values, label='Male')
- ax.plot(female_counts.index, female_counts.values, label='Female')
- ax.set_xlabel('Year')
- ax.set_ylabel('Count')
- ax.set_title('Suicide Counts by Gender over Time')
- ax.legend()
+fig, ax = plt.subplots()
+ax.plot(male_counts.index, male_counts.values, label='Male')
+ax.plot(female_counts.index, female_counts.values, label='Female')
+ax.set_xlabel('Year')
+ax.set_ylabel('Count')
+ax.set_title('Suicide Counts by Gender over Time')
+ax.legend()
 
- st.pyplot(fig)
+st.pyplot(fig)
 
 
 
