@@ -73,7 +73,7 @@ if(st.button("แบบกราฟเส้น")):
 
  plt.title('Trend of Suicide Rates from 1987 to 2014', fontsize=16)
  # แสดงกราฟเส้น
- plt.plot(df_year.index, df_year)
+ plt.plot(df_year.index, df_year,label='Number of Suicides')
  plt.xlabel('Year')
  plt.ylabel('Number of Suicides')
  plt.show()
