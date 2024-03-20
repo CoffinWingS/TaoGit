@@ -55,6 +55,6 @@ plt.xlabel('Year')
 plt.ylabel('Number of Suicides')
 plt.show()
 
-st.pyplot()
+st.pyplot(fig)
 
 
