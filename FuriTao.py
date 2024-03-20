@@ -54,9 +54,7 @@ plt.plot(df_year.index, df_year)
 plt.xlabel('Year')
 plt.ylabel('Number of Suicides')
 plt.show()
-st.pyplot()
 
-# แสดงกราฟเส้น
 st.pyplot()
 
 
