@@ -12,34 +12,34 @@ st.write(df.head(10))
 st.subheader("อัตราการฆ่าตัวตายในแต่ละประเทศ")
 
 if(st.button("แสดงกราฟแท่ง")):
-# นับจำนวนการฆ่าตัวตายในแต่ละประเทศ
-df_country = df.groupby('country').size()
+ # นับจำนวนการฆ่าตัวตายในแต่ละประเทศ
+ df_country = df.groupby('country').size()
 
-# เรียงลำดับประเทศตามจำนวนการฆ่าตัวตาย
-df_country = df_country.sort_values(ascending=False)
+ # เรียงลำดับประเทศตามจำนวนการฆ่าตัวตาย
+ df_country = df_country.sort_values(ascending=False)
 
-# ปรับขนาดกราฟ
-plt.figure(figsize=(22, 50))
-
-
-# เพิ่มกริด
-plt.grid(axis='x')
-
-# แสดงข้อมูลเพิ่มเติมบนกราฟ
-for i, v in enumerate(df_country):
-    plt.text(v + 3, i, f'{v:,}')
-    plt.annotate(f'{df_country.index[i]}', (v, i), xytext=(0, 5), textcoords='offset points')
-
-# แสดงกราฟแท่งแนวนอน
-#plt.barh(df_country.index, df_country, linewidth=3)
-plt.barh(df_country.index, df_country, color='#ff5722')
-plt.xlabel('Furina For Like', fontsize=40)
-plt.ylabel('HuTao for Love', fontsize=40)
-plt.show()
+ # ปรับขนาดกราฟ
+ plt.figure(figsize=(22, 50))
 
 
-# แสดงกราฟบน Streamlit
-st.pyplot(plt)
+ # เพิ่มกริด
+ plt.grid(axis='x')
+
+ # แสดงข้อมูลเพิ่มเติมบนกราฟ
+ for i, v in enumerate(df_country):
+     plt.text(v + 3, i, f'{v:,}')
+     plt.annotate(f'{df_country.index[i]}', (v, i), xytext=(0, 5), textcoords='offset points')
+
+ # แสดงกราฟแท่งแนวนอน
+ #plt.barh(df_country.index, df_country, linewidth=3)
+ plt.barh(df_country.index, df_country, color='#ff5722')
+ plt.xlabel('Furina For Like', fontsize=40)
+ plt.ylabel('HuTao for Love', fontsize=40)
+ plt.show()
+
+
+ # แสดงกราฟบน Streamlit
+ st.pyplot(plt)
  st.button("ไม่แสดงข้อมูลสถิติ")
 else:
     st.button("ไม่แสดงข้อมูลสถิติ")
