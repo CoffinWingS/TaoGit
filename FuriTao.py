@@ -40,9 +40,9 @@ if(st.button("แสดงกราฟแท่ง")):
 
  # แสดงกราฟบน Streamlit
  st.pyplot(plt)
- st.button("ไม่แสดงข้อมูลสถิติ")
+ st.button("ปิดข้อมูล")
 else:
-    st.button("ไม่แสดงข้อมูลสถิติ")
+    st.button("ปิดไปเลย")
 
 
 
