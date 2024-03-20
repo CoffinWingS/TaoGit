@@ -25,7 +25,7 @@ if(st.button("แสดงกราฟแท่ง")):
  plt.grid(axis='x')
 
  # เพิ่มเครื่องหมายบอกค่าบนแท่ง
-for i, v in enumerate(df_country):
+ for i, v in enumerate(df_country):
     plt.text(v, i, f'{v:,}', ha='right', va='center')
 
 
