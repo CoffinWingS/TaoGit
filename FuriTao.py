@@ -28,8 +28,10 @@ for i, v in enumerate(df_country):
 # เพิ่มกริด
 plt.grid(axis='x')
 
-# เปลี่ยนขนาดกราฟ
-plt.figure(figsize=(30, 20))
+# แสดงข้อมูลเพิ่มเติมบนกราฟ
+for i, v in enumerate(df_country):
+    plt.text(v + 3, i, f'{v:,}')
+    plt.annotate(f'{df_country.index[i]}', (v, i), xytext=(0, 5), textcoords='offset points')
 
 # แสดงกราฟแท่งแนวนอน
 #plt.barh(df_country.index, df_country, linewidth=3)
