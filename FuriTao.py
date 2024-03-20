@@ -15,7 +15,7 @@ countries = ["Albania", "Antigua and Barbuda", "Argentina", "Aruba", "Australia"
 df = df[df["country"].isin(countries)]
 
 # วาดกราฟแท่ง
-plt.bar(df["country"])
+plt.bar(df["country"], df['suicides_no'])
 plt.xlabel("ประเทศ")
 plt.ylabel("จำนวนผู้ติดเชื้อ")
 
