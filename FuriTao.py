@@ -76,7 +76,7 @@ if(st.button("แบบกราฟเส้น")):
 
 
  # แสดงกราฟเส้น
- plt.plot(df_year.index, df_year,, label='Line 1')
+ plt.plot(df_year.index, df_year, label='Line 1')
  plt.legend(loc='best')
  plt.xlabel('Year')
  plt.ylabel('Number of Suicides')
