@@ -71,7 +71,7 @@ if(st.button("แบบกราฟเส้น")):
 
  plt.style.use('seaborn-v0_8-whitegrid')
 
- plt.title('Trend of Suicide Rates from 1987 to 2014', fontsize=16)
+ plt.title('อัตราการฆ่าตัวตายในปี 1987 ถึง 2014', fontsize=16)
  # แสดงกราฟเส้น
  plt.plot(df_year.index, df_year)
  plt.xlabel('Year')
