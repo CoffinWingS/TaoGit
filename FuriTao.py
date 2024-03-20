@@ -46,16 +46,33 @@ else:
     st.button("ปิดไปเลย")
 
 #***************************************************************************************************
-# นับจำนวนการฆ่าตัวตายในแต่ละปี
-df_year = df.groupby('year').size()
+if(st.button("แสดงโนมโน้มการฆ่า")):
+ # นับจำนวนการฆ่าตัวตายในแต่ละปี
+ df_year = df.groupby('year').size()
 
-# แสดงกราฟเส้น
-plt.bar(df_year.index, df_year,color='#607d8b', alpha=0.5, hatch='\\\\')
-#plt.plot(df_year.index, df_year)
-plt.xlabel('Year')
-plt.ylabel('Number of Suicides')
-plt.show()
+ # แสดงกราฟเส้น
+ plt.bar(df_year.index, df_year,color='#607d8b', alpha=0.5, hatch='\\\\')
+ #plt.plot(df_year.index, df_year)
+ plt.xlabel('Year')
+ plt.ylabel('Number of Suicides')
+ plt.show()
 
-st.pyplot(plt)
+ st.pyplot(plt)
+ st.button("ปิดข้อมูล")
+else:
+   st.button("ปิดดิ")
+#***************************************************************************************************
+if(st.button("แสดงโนมโน้มการฆ่า")):
+ df_year = df.groupby('year').size()
 
+ # แสดงกราฟเส้น
+ plt.plot(df_year.index, df_year)
+ plt.xlabel('Year')
+ plt.ylabel('Number of Suicides')
+ plt.show()
 
+ st.pyplot(plt)
+ st.button("ปิดข้อมูล")
+else:
+  st.button("Exit!")
+#***************************************************************************************************
