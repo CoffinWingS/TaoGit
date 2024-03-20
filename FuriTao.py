@@ -73,7 +73,7 @@ if(st.button("แบบกราฟเส้น")):
  plt.ylabel('Number of Suicides')
  plt.show()
 
- st.pyplot(plt)
+ st.pyplot()
  st.button("ปิดข้อมูล")
 else:
   st.button("Exit!")
