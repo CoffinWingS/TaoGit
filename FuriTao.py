@@ -14,6 +14,9 @@ countries = ["Albania", "Antigua and Barbuda", "Argentina", "Aruba", "Australia"
 # กรองข้อมูล
 df = df[df["country"].isin(countries)]
 
+# นับจำนวนผู้ติดเชื้อในแต่ละประเทศ
+counts = df.groupby("country").size()
+
 
 
 
