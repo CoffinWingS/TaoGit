@@ -87,7 +87,7 @@ if(st.button("แบบกราฟเส้น")):
 else:
   st.button("Exit!")
 #***************************************************************************************************
- sex_counts = df['sex'].value_counts()
+sex_counts = df['sex'].value_counts()
  # แสดงข้อมูลด้วย Streamlit
  st.title('Counts of Gender in Suicide Dataset')
  st.write('Counts of Male and Female in Suicide Dataset')
