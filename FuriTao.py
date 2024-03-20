@@ -25,6 +25,9 @@ plt.figure(figsize=(22, 50))
 for i, v in enumerate(df_country):
     plt.text(v, i, f'{v:,}', ha='right', va='center')
 
+# เพิ่มกริด
+plt.grid(axis='x')
+
 # แสดงกราฟแท่งแนวนอน
 #plt.barh(df_country.index, df_country, linewidth=3)
 plt.barh(df_country.index, df_country, color='#ff5722')
