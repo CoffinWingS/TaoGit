@@ -74,17 +74,17 @@ if(st.button("แบบกราฟเส้น")):
  plt.title('Trend of Suicide Rates from 1987 to 2014', fontsize=16)
 
 
- # สร้างข้อมูล
-x = [1, 2, 3]
-y1 = [2, 4, 6]
-y2 = [4, 8, 12]
+  # สร้างข้อมูล
+ x = [1, 2, 3]
+ y1 = [2, 4, 6]
+ y2 = [4, 8, 12]
 
-# Plot data
-plt.plot(x, y1, label='Line 1')
-plt.plot(x, y2, label='Line 2')
+ # Plot data
+ plt.plot(x, y1, label='Line 1')
+ plt.plot(x, y2, label='Line 2')
 
-# Add legend
-plt.legend(loc='best')
+ # Add legend
+ plt.legend(loc='best')
  # แสดงกราฟเส้น
  plt.plot(df_year.index, df_year,label='Number of Suicides')
  plt.xlabel('Year')
