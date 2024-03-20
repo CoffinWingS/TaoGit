@@ -11,6 +11,9 @@ st.subheader("อัตราการฆ่าตัวตายในแต่
 
 countries = ["Albania", "Antigua and Barbuda", "Argentina", "Aruba", "Australia", "Australia"]
 
+# กรองข้อมูล
+df = df[df["country"].isin(countries)]
+
 
 
 
