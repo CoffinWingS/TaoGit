@@ -66,7 +66,17 @@ else:
    st.button("ปิดดิ")
 #***************************************************************************************************
 if(st.button("แบบกราฟเส้น")):
+ 
  df_year = df.groupby('year').size()
+
+
+ x = [10,20,30,40,50]
+ y1 = [40,8,60,30,0]
+ plt.plot(x,y1,ls='-',c='r',label = 'Product 1')
+ y2 = [20,30,35,40,42]
+ plt.plot(x,y2,ls='--',c='g', label = 'Product 2')
+ y3 = [55,52,51,42,40]
+ plt.plot(x,y3,ls=':',c='b', label = 'Product 3')
  # แสดงกราฟเส้น
  plt.plot(df_year.index, df_year)
  plt.xlabel('Year')
