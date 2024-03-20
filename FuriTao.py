@@ -8,18 +8,26 @@ st.header("สถิติการฆ่าตัวต่ายในปี 19
 st.write(df.head(10))
 
 st.subheader("อัตราการฆ่าตัวตายในแต่ละประเทศ")
+
+
 import matplotlib.pyplot as plt
+# อ่านข้อมูลจากไฟล์ CSV
+df = pd.read_csv("./data/master.csv")
 
-# เลือกประเทศที่ต้องการ
-c = ["Albania", "Antigua and Barbuda", "Argentina", "Aruba", "Australia", "Australia"]
+# เลือกเฉพาะประเทศที่ต้องการ
+countries = ["Albania", "Antigua and Barbuda", "Argentina", "Aruba", "Australia", "Australia"]
+df = df[df["Country"].isin(countries)]
 
-# กรองข้อมูลเฉพาะประเทศที่เลือก
-Num = dt[dt["country"].isin(c)]
+# กรุ๊ปข้อมูลตามประเทศและนับจำนวนผู้ติดเชื้อ
+df = df.groupby("Country").size().reset_index(name="จำนวนผู้ติดเชื้อ")
 
-# แสดงกราฟแท่ง
-plt.bar(Num['country'], Num["Confirmed"])
+# เรียงลำดับจำนวนผู้ติดเชื้อจากมากไปน้อย
+df = df.sort_values("จำนวนผู้ติดเชื้อ", ascending=False)
+
+# วาดกราฟแท่ง
+plt.bar(df["Country"], df["จำนวนผู้ติดเชื้อ"])
 plt.xlabel("ประเทศ")
 plt.ylabel("จำนวนผู้ติดเชื้อ")
-plt.title("จำนวนผู้ติดเชื้อโควิด-19")
+plt.title("จำนวนผู้ติดเชื้อโควิดในแต่ละประเทศ")
 plt.show()
 
