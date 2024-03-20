@@ -19,7 +19,7 @@ df_country = df.groupby('country').size()
 df_country = df_country.sort_values(ascending=False)
 
 # ปรับขนาดกราฟ
-plt.figure(figsize=(50, 15))
+plt.figure(figsize=(4, 1))
 
 # แสดงกราฟแท่งแนวนอน
 plt.barh(df_country.index, df_country)
