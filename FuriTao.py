@@ -14,7 +14,7 @@ import matplotlib.pyplot as plt
 c = ["Albania", "Antigua and Barbuda", "Argentina", "Aruba", "Australia", "Australia"]
 
 # กรองข้อมูลเฉพาะประเทศที่เลือก
-df = dt[dt["Country"].isin(c)]
+df = dt[dt["country"].isin(c)]
 
 # แสดงกราฟแท่ง
 plt.bar(df["Country"], df["Confirmed"])
