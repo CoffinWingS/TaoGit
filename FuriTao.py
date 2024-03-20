@@ -55,6 +55,6 @@ plt.plot(df['year'],df['suicides_no'])
 plt.xlabel('Year')
 plt.ylabel('Suicide Rate')
 plt.show()
-
+st.pyplot(plt)
 
 
