@@ -11,7 +11,7 @@ st.write(df.head(10))
 
 st.subheader("อัตราการฆ่าตัวตายในแต่ละประเทศ")
 
-
+if(st.button("แสดงกราฟแท่ง")):
 # นับจำนวนการฆ่าตัวตายในแต่ละประเทศ
 df_country = df.groupby('country').size()
 
@@ -21,9 +21,6 @@ df_country = df_country.sort_values(ascending=False)
 # ปรับขนาดกราฟ
 plt.figure(figsize=(22, 50))
 
-# เพิ่มเครื่องหมายบอกค่าบนแท่ง
-for i, v in enumerate(df_country):
-    plt.text(v, i, f'{v:,}', ha='right', va='center')
 
 # เพิ่มกริด
 plt.grid(axis='x')
@@ -43,7 +40,9 @@ plt.show()
 
 # แสดงกราฟบน Streamlit
 st.pyplot(plt)
-
+ st.button("ไม่แสดงข้อมูลสถิติ")
+else:
+    st.button("ไม่แสดงข้อมูลสถิติ")
 
 
 
