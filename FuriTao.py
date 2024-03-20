@@ -13,7 +13,7 @@ st.subheader("อัตราการฆ่าตัวตายในแต่
 
 
 # นับจำนวนการฆ่าตัวตายในแต่ละประเทศ
-df_country = df.groupby('country').size()
+df_country = df.groupby('country').size(30)
 
 # เรียงลำดับประเทศตามจำนวนการฆ่าตัวตาย
 df_country = df_country.sort_values(ascending=False)
