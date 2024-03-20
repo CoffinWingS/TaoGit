@@ -47,13 +47,14 @@ else:
 
 #***************************************************************************************************
 # เลือกข้อมูลปี 1987 ถึง 2014
-df = df[df['year'].between(1987, 2014)]
+df = df[df['year'] >= 1987]
+df = df[df['year'] <= 2014]
 
 # กรองข้อมูลเฉพาะประเทศไทย
-df = df[df['country'] == 'Thailand']
+#df = df[df['country'] == 'Thailand']
 
-# แสดงกราฟเส้น
-plt.plot(df['year'], df['suicide_rate'])
+# สร้างกราฟเส้น
+plt.plot(df['year'])
 plt.xlabel('Year')
 plt.ylabel('Suicide Rate')
 plt.show()
