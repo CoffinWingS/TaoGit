@@ -69,7 +69,7 @@ if(st.button("แบบกราฟเส้น")):
  
  df_year = df.groupby('year').size()
 
- plt.style.use('fast')
+ plt.style.use('ggplot')
 
  plt.title('Trend of Suicide Rates from 1987 to 2014', fontsize=16)
  # แสดงกราฟเส้น
