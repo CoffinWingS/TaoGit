@@ -50,15 +50,12 @@ else:
 df = df[df['year'] >= 1987]
 df = df[df['year'] <= 2014]
 
-# กรองข้อมูลเฉพาะประเทศไทย
-#df = df[df['country'] == 'Thailand']
-
 # สร้างกราฟเส้น
-plt.plot(df['year'],df['suicides_no'],plot.line())
-plt.xlabel('Year')
-plt.ylabel('Suicide Rate')
-plt.show()
-st.pyplot()
+ plt.plot(df['year'],df['suicides_no'])
+ plt.xlabel('Year')
+ plt.ylabel('Suicide Rate')
+ plt.show()
+ st.pyplot()
 
 
 
