@@ -20,6 +20,8 @@ df_country = df_country.sort_values(ascending=False)
 
 # ปรับขนาดกราฟ
 plt.figure(figsize=(22, 50))
+# เปลี่ยนสีของแท่ง
+plt.barh(df_country.index, df_country, color='#008000')
 
 # แสดงกราฟแท่งแนวนอน
 plt.barh(df_country.index, df_country, linewidth=3)
