@@ -9,15 +9,6 @@ st.write(df.head(10))
 
 st.subheader("อัตราการฆ่าตัวตายในแต่ละประเทศ")
 
-# เลือกปีล่าสุด
-year = df["year"].max()
-
-# เลือกเพศ
-sex = "male"
-
-# กรองข้อมูล
-df = df[(df["year"] == year) & (df["sex"] == sex)]
-
 # นับจำนวนผู้ฆ่าตัวตายในแต่ละประเทศ
 counts = df.groupby("country").size()
 
