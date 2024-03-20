@@ -54,17 +54,12 @@ df = df[df['year'] <= 2014]
 #df = df[df['country'] == 'Thailand']
 
 # สร้างกราฟเส้น
-plt.plot(df['year'],df['sex'])
+plt.plot(df['year'],df['sex'], ,df['age'])
 plt.xlabel('Year')
 plt.ylabel('Suicide Rate')
 plt.show()
 st.pyplot()
 
-# แสดงข้อมูลสรุป
-st.write(df.head())
-
-# แสดงกราฟเส้น
-st.pyplot()
 
 
 
