@@ -29,7 +29,7 @@ for i, v in enumerate(df_country):
 plt.grid(axis='x')
 
 # เพิ่มกรอบ
-plt.box(False)
+#plt.box(False)
 
 # แสดงกราฟแท่งแนวนอน
 #plt.barh(df_country.index, df_country, linewidth=3)
