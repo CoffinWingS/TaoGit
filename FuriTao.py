@@ -12,10 +12,10 @@ st.subheader("อัตราการฆ่าตัวตายในแต่
 countries = ["Albania", "Antigua and Barbuda", "Argentina", "Aruba", "Australia", "Australia"]
 
 # กรองข้อมูล
-df = df[df["country"].isin(countries)]
+dt = df[df["country"].isin(countries)]
 
 # วาดกราฟแท่ง
-plt.bar(df["country"], df["country"])
+plt.bar(dt["country"], dt["country"])
 plt.xlabel("ประเทศ")
 plt.ylabel("จำนวนผู้ติดเชื้อ")
 
