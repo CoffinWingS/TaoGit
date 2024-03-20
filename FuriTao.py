@@ -21,14 +21,9 @@ if(st.button("แสดงกราฟแท่ง")):
  # ปรับขนาดกราฟ
  plt.figure(figsize=(22, 50))
 
-
  # เพิ่มกริด
  plt.grid(axis='x')
 
- # แสดงข้อมูลเพิ่มเติมบนกราฟ
- for i, v in enumerate(df_country):
-     plt.text(v + 3, i, f'{v:,}')
-     plt.annotate(f'{df_country.index[i]}', (v, i), xytext=(0, 5), textcoords='offset points')
 
  # แสดงกราฟแท่งแนวนอน
  #plt.barh(df_country.index, df_country, linewidth=3)
