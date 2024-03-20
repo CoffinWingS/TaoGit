@@ -2,7 +2,7 @@ import streamlit as st
 import matplotlib.pyplot as plt
 import pandas as pd
 
-df=pd.read_csv('./data/masterr.csv')
+df=pd.read_csv('./data/master.csv')
 
 st.header("สถิติการฆ่าตัวต่ายในปี 1987 - 2014")
 
@@ -21,11 +21,6 @@ plt.ylabel("จำนวนผู้ฆ่าตัวตาย")
 
 # แสดงกราฟบน Streamlit
 st.pyplot(plt)
-
-# วาดกราฟแท่ง
-plt.bar(counts.index, counts)
-plt.xlabel("ประเทศ")
-plt.ylabel("จำนวนผู้ฆ่าตัวตาย")
 
 # แสดงกราฟบน Streamlit
 st.pyplot(plt)
