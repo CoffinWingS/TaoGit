@@ -14,10 +14,10 @@ import matplotlib.pyplot as plt
 c = ["Albania", "Antigua and Barbuda", "Argentina", "Aruba", "Australia", "Australia"]
 
 # กรองข้อมูลเฉพาะประเทศที่เลือก
-df = dt[dt["country"].isin(c)]
+Num = dt[dt["country"].isin(c)]
 
 # แสดงกราฟแท่ง
-plt.bar(df["Country"], df["Confirmed"])
+plt.bar(Num['country'], Num["Confirmed"])
 plt.xlabel("ประเทศ")
 plt.ylabel("จำนวนผู้ติดเชื้อ")
 plt.title("จำนวนผู้ติดเชื้อโควิด-19")
