@@ -17,6 +17,11 @@ df = df[df["country"].isin(countries)]
 # นับจำนวนผู้ติดเชื้อในแต่ละประเทศ
 counts = df.groupby("country").size()
 
+# วาดกราฟแท่ง
+plt.bar(counts.index, counts)
+plt.xlabel("ประเทศ")
+plt.ylabel("จำนวนผู้ติดเชื้อ")
+
 
 
 
