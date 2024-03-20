@@ -9,18 +9,25 @@ st.write(df.head(10))
 
 st.subheader("อัตราการฆ่าตัวตายในแต่ละประเทศ")
 
-countries = ["Albania", "Antigua and Barbuda", "Argentina", "Aruba", "Australia", "Australia"]
+# เลือกปีล่าสุด
+year = df["year"].max()
+
+# เลือกเพศ
+sex = "male"
 
 # กรองข้อมูล
-df = df[df["country"].isin(countries)]
+df = df[(df["year"] == year) & (df["sex"] == sex)]
 
-# นับจำนวนผู้ติดเชื้อในแต่ละประเทศ
+# นับจำนวนผู้ฆ่าตัวตายในแต่ละประเทศ
 counts = df.groupby("country").size()
 
 # วาดกราฟแท่ง
 plt.bar(counts.index, counts)
 plt.xlabel("ประเทศ")
-plt.ylabel("จำนวนผู้ติดเชื้อ")
+plt.ylabel("จำนวนผู้ฆ่าตัวตาย")
+
+# แสดงกราฟบน Streamlit
+st.pyplot(plt)
 
 
 
