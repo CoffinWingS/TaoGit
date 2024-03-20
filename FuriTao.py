@@ -9,20 +9,6 @@ st.write(df.head(10))
 
 st.subheader("อัตราการฆ่าตัวตายในแต่ละประเทศ")
 
-countries = ["Albania", "Antigua and Barbuda", "Argentina", "Aruba", "Australia", "Australia"]
 
-# กรองข้อมูล
-df = df[df["country"].isin(countries)]
-
-# นับจำนวนผู้ติดเชื้อในแต่ละประเทศ
-counts = df.groupby("country").size()
-
-# วาดกราฟแท่ง
-plt.bar(counts.index, counts)
-plt.xlabel("ประเทศ")
-plt.ylabel("จำนวนผู้ติดเชื้อ")
-
-# แสดงกราฟบน Streamlit
-st.pyplot(plt)
 
 
