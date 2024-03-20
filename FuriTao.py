@@ -60,5 +60,11 @@ plt.ylabel('Suicide Rate')
 plt.show()
 st.pyplot()
 
+# แสดงข้อมูลสรุป
+st.write(df.head())
+
+# แสดงกราฟเส้น
+st.pyplot()
+
 
 
