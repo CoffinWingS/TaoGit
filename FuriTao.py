@@ -28,8 +28,8 @@ for i, v in enumerate(df_country):
 # เพิ่มกริด
 plt.grid(axis='x')
 
-# เพิ่มกรอบ
-#plt.box(False)
+# เปลี่ยนขนาดกราฟ
+plt.figure(figsize=(10, 6))
 
 # แสดงกราฟแท่งแนวนอน
 #plt.barh(df_country.index, df_country, linewidth=3)
