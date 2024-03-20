@@ -12,13 +12,17 @@ st.write(df.head(10))
 st.subheader("อัตราการฆ่าตัวตายในแต่ละประเทศ")
 
 
-# นับจำนวนผู้ฆ่าตัวตายในแต่ละประเทศ
-counts = df.groupby('country').size()
+# นับจำนวนการฆ่าตัวตายในแต่ละประเทศ
+df_country = df.groupby('country').size()
 
-# วาดกราฟแท่ง
-plt.bar(counts.index, counts)
-plt.xlabel("Furina For Like")
-plt.ylabel("HuTao for Love")
+# เรียงลำดับประเทศตามจำนวนการฆ่าตัวตาย
+df_country = df_country.sort_values(ascending=False)
+
+# แสดงกราฟแท่งแนวนอน
+plt.barh(df_country.index, df_country)
+plt.xlabel('Furina For Like')
+plt.ylabel('HuTao for Love')
+plt.show()
 
 # แสดงกราฟบน Streamlit
 st.pyplot(plt)
