@@ -46,16 +46,17 @@ else:
     st.button("ปิดไปเลย")
 
 #***************************************************************************************************
-# เลือกข้อมูลปี 1987 ถึง 2014
-df = df[df['year'] >= 1987]
-df = df[df['year'] <= 2014]
+# นับจำนวนการฆ่าตัวตายในแต่ละปี
+df_year = df.groupby('year').size()
 
-
-# สร้างกราฟเส้น
-plt.plot(df['year'],df['generation'])
+# แสดงกราฟเส้น
+plt.plot(df_year.index, df_year)
 plt.xlabel('Year')
-plt.ylabel('Suicide Rate')
+plt.ylabel('Number of Suicides')
 plt.show()
-st.pyplot(plt)
+st.pyplot()
+
+# แสดงกราฟเส้น
+st.pyplot()
 
 
