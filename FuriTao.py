@@ -1,7 +1,6 @@
 import streamlit as st
 import matplotlib.pyplot as plt
 import pandas as pd
-import seaborn as sns
 
 
 df=pd.read_csv('./data/master.csv')
@@ -18,10 +17,9 @@ counts = df.groupby('country').size()
 
 # วาดกราฟแท่ง
 fig, ax = plt.subplots(figsize=(10, 6))
-sns.barplot(x=country_counts.index, y=country_counts, ax=ax)
-ax.set_xlabel("Country")
-ax.set_ylabel("Number of Suicides")
-#st.pyplot(fig)
+plt.barplot(counts.index, counts)
+plt.xlabel("Furina For Like")
+plt.ylabel("HuTao for Love")
 
 # แสดงกราฟบน Streamlit
 st.pyplot(plt)
