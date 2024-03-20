@@ -18,10 +18,13 @@ df_country = df.groupby('country').size()
 # เรียงลำดับประเทศตามจำนวนการฆ่าตัวตาย
 df_country = df_country.sort_values(ascending=False)
 
+# ปรับขนาดกราฟ
+plt.figure(figsize=(10, 5))
+
 # แสดงกราฟแท่งแนวนอน
 plt.barh(df_country.index, df_country)
-plt.xlabel('Furina For Like', fontsize=12)
-plt.ylabel('HuTao for Love', fontsize=12)
+plt.xlabel('Furina For Like')
+plt.ylabel('HuTao for Love')
 plt.show()
 
 
