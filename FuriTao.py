@@ -28,6 +28,9 @@ for i, v in enumerate(df_country):
 # เพิ่มกริด
 plt.grid(axis='x')
 
+# เพิ่มกรอบ
+plt.box(False)
+
 # แสดงกราฟแท่งแนวนอน
 #plt.barh(df_country.index, df_country, linewidth=3)
 plt.barh(df_country.index, df_country, color='#ff5722')
