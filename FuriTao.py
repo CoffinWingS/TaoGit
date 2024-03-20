@@ -50,7 +50,7 @@ else:
 df_year = df.groupby('year').size()
 
 # แสดงกราฟเส้น
-plt.bar(df_year.index, df_year,color='#607d8b', hatch='\\\\')
+plt.bar(df_year.index, df_year,color='#607d8b', alpha=0.5, hatch='\\\\')
 #plt.plot(df_year.index, df_year)
 plt.xlabel('Year')
 plt.ylabel('Number of Suicides')
