@@ -20,8 +20,8 @@ df_country = df_country.sort_values(ascending=False)
 
 # แสดงกราฟแท่งแนวนอน
 plt.barh(df_country.index, df_country)
-plt.xlabel('Furina For Like')
-plt.ylabel('HuTao for Love')
+plt.xlabel('Furina For Like', fontsize=12)
+plt.ylabel('HuTao for Love', fontsize=12)
 plt.show()
 
 
