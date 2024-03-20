@@ -16,7 +16,6 @@ st.subheader("อัตราการฆ่าตัวตายในแต่
 counts = df.groupby('country').size()
 
 # วาดกราฟแท่ง
-fig, ax = plt.subplots(figsize=(10, 6))
 plt.bar(counts.index, counts)
 plt.xlabel("Furina For Like")
 plt.ylabel("HuTao for Love")
