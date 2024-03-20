@@ -11,8 +11,6 @@ st.subheader("อัตราการฆ่าตัวตายในแต่
 
 
 import matplotlib.pyplot as plt
-# อ่านข้อมูลจากไฟล์ CSV
-df = pd.read_csv("./data/master.csv")
 
 # เลือกเฉพาะประเทศที่ต้องการ
 countries = ["Albania", "Antigua and Barbuda", "Argentina", "Aruba", "Australia", "Australia"]
