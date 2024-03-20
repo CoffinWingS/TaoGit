@@ -9,6 +9,8 @@ st.write(df.head(10))
 
 st.subheader("อัตราการฆ่าตัวตายในแต่ละประเทศ")
 
+countries = ["Albania", "Antigua and Barbuda", "Argentina", "Aruba", "Australia", "Australia"]
+
 
 
 
