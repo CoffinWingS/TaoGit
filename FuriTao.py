@@ -9,6 +9,8 @@ st.header("สถิติการฆ่าตัวต่ายในปี 19
 
 st.write(df.head(10))
 
+
+#***************************************************************************************************
 st.subheader("อัตราการฆ่าตัวตายในแต่ละประเทศ")
 
 if(st.button("แสดงกราฟแท่ง")):
@@ -23,6 +25,10 @@ if(st.button("แสดงกราฟแท่ง")):
 
  # เพิ่มกริด
  plt.grid(axis='x')
+
+ # เพิ่มเครื่องหมายบอกค่าบนแท่ง
+ for i, v in enumerate(df_country):
+    plt.text(v, i, f'{v:,}', ha='right', va='center')
 
 
  # แสดงกราฟแท่งแนวนอน
@@ -39,5 +45,36 @@ if(st.button("แสดงกราฟแท่ง")):
 else:
     st.button("ปิดไปเลย")
 
+#***************************************************************************************************
+st.subheader("โนมโน้มการฆ่าตัวตายในช่วงปี")
 
 
+if(st.button("แสดงโนมโน้มการฆ่าตัวตายในช่วงปี")):
+ # นับจำนวนการฆ่าตัวตายในแต่ละปี
+ df_year = df.groupby('year').size()
+
+ # แสดงกราฟเส้น
+ plt.bar(df_year.index, df_year,color='#607d8b')
+ #plt.plot(df_year.index, df_year)
+ plt.xlabel('Year')
+ plt.ylabel('Number of Suicides')
+ plt.show()
+
+ st.pyplot(plt)
+ st.button("ปิดข้อมูล")
+else:
+   st.button("ปิดดิ")
+#***************************************************************************************************
+if(st.button("แบบกราฟเส้น")):
+ df_year = df.groupby('year').size()
+ # แสดงกราฟเส้น
+ plt.plot(df_year.index, df_year)
+ plt.xlabel('Year')
+ plt.ylabel('Number of Suicides')
+ plt.show()
+
+ st.pyplot(plt)
+ st.button("ปิดข้อมูล")
+else:
+  st.button("Exit!")
+#***************************************************************************************************
