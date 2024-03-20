@@ -21,6 +21,10 @@ df_country = df_country.sort_values(ascending=False)
 # ปรับขนาดกราฟ
 plt.figure(figsize=(22, 50))
 
+# เพิ่มเครื่องหมายบอกค่าบนแท่ง
+for i, v in enumerate(df_country):
+    plt.text(v, i, f'{v:,}', ha='right', va='center')
+
 # แสดงกราฟแท่งแนวนอน
 #plt.barh(df_country.index, df_country, linewidth=3)
 plt.barh(df_country.index, df_country, color='#ff5722')
