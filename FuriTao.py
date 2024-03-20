@@ -23,8 +23,8 @@ plt.figure(figsize=(22, 50))
 
 # แสดงกราฟแท่งแนวนอน
 plt.barh(df_country.index, df_country)
-plt.xlabel('Furina For Like', fontsize=14)
-plt.ylabel('HuTao for Love', fontsize=30)
+plt.xlabel('Furina For Like', fontsize=40)
+plt.ylabel('HuTao for Love', fontsize=40)
 plt.show()
 
 
