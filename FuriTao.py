@@ -87,20 +87,20 @@ if(st.button("แบบกราฟเส้น")):
 else:
   st.button("Exit!")
 #***************************************************************************************************
-    gender_counts = dt['sex'].value_counts()
+ gender_counts = dt['sex'].value_counts()
 
-    # Plotting
-    plt.figure(figsize=(8, 5))
-    plt.plot(gender_counts.index, gender_counts.values, marker='o', linestyle='-')
-    plt.title('Counts of Genders')
-    plt.xlabel('Gender')
-    plt.ylabel('Count')
-    plt.grid(True)
-    plt.xticks(rotation=45)
-    st.pyplot()
+ # Plotting
+ plt.figure(figsize=(8, 5))
+ plt.plot(gender_counts.index, gender_counts.values, marker='o', linestyle='-')
+ plt.title('Counts of Genders')
+ plt.xlabel('Gender')
+ plt.ylabel('Count')
+ plt.grid(True)
+ plt.xticks(rotation=45)
+ st.pyplot()
 
-# Streamlit UI
-st.title('Gender Counts and Line Graph')
-st.write("Counts of male and female genders over the years")
+ # Streamlit UI
+ st.title('Gender Counts and Line Graph')
+ st.write("Counts of male and female genders over the years")
 
 
