@@ -96,8 +96,8 @@ st.write('Counts of Male and Female in Suicide Dataset')
 st.bar_chart(sex_counts)
 
  # เพิ่มกราฟเส้นเพื่อแสดงการแยกตามเพศ
-male_data = df[df['sex'] == 'male']
-female_data = df[df['sex'] == 'female']
+#male_data = df[df['sex'] == 'male']
+#female_data = df[df['sex'] == 'female']
 
 male_counts = male_data['year'].value_counts().sort_index()
 female_counts = female_data['year'].value_counts().sort_index()
