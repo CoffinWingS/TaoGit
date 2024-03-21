@@ -171,8 +171,8 @@ def show_age_stats(age_group):
      st.pyplot(plt)
 
 # เลือกช่วงอายุจาก dropdown
-    selected_age_group = st.selectbox("เลือกช่วงอายุ", df['age'].unique())
+selected_age_group = st.selectbox("เลือกช่วงอายุ", df['age'].unique())
 
 # เรียกใช้ฟังก์ชันเมื่อมีการเลือกช่วงอายุ
-    show_age_stats(selected_age_group)
+show_age_stats(selected_age_group)
 
