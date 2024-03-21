@@ -194,7 +194,7 @@ df_filtered = df[(df['year'] >= 1987) & (df['year'] <= 2016)]
 
 # สร้าง Box-plot แยกตามประเทศ
 plt.figure(figsize=(12, 8))
-df_filtered.boxplot(column='suicides_per_100k_pop', by='country', rot=90)
+df_filtered.boxplot(column='sex', by='country', rot=90)
 plt.title('Box-plot ของอัตราการฆ่าตัวตายโดยเฉลี่ยแยกตามประเทศ')
 plt.xlabel('ประเทศ')
 plt.ylabel('อัตราการฆ่าตัวตาย (per 100k pop)')
