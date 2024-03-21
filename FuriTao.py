@@ -203,7 +203,7 @@ print("ค่ามัธยฐานอัตราการฆ่าตัว�
 plt.figure(figsize=(10, 6))
 
 # วาด Box Plot
-sns.boxplot(x="sex", y="suicides_no", data=df)
+sns.boxplot(x="sex", data=df)
 
 # ตั้งชื่อแกน
 plt.xlabel("เพศ")
