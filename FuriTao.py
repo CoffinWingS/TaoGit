@@ -142,16 +142,18 @@ show_country_stats(selected_country)
 #***************************************************************************************************
 
 # แปลงข้อมูลในคอลัมน์ 'age' เป็นข้อมูลแบบ float
-df['age'] = df['age'].apply(lambda x: float(x.split('-')[0]) if '-' in x else float(x))
+df['age_start'] = df['age'].apply(lambda x: float(x.split('-')[0].strip()[:-6]))
+df['age_end'] = df['age'].apply(lambda x: float(x.split('-')[1].strip()[:-6]))
 
 # คำนวณหาอายุเฉลี่ย
-df['age'] = (df['age'] + df['age']) / 2
+df['average_age'] = (df['age_start'] + df['age_end']) / 2
+
 
 st.subheader("อัตราการฆ่าตัวตายในช่วงอายุ")
 
 # แสดงกราฟ
 plt.figure(figsize=(12, 6))
-plt.hist(df['age'], bins=10, color='skyblue', edgecolor='black')
+plt.hist(df['average_age'], bins=10, color='skyblue', edgecolor='black')
 plt.xlabel('อายุ')
 plt.ylabel('จำนวนการฆ่าตัวตาย')
 plt.title('อัตราการฆ่าตัวตายในช่วงอายุ')
