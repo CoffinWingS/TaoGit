@@ -187,7 +187,7 @@ selected_age_group = st.selectbox("เลือกช่วงอายุ", df[
 # เรียกใช้ฟังก์ชันเมื่อมีการเลือกช่วงอายุ
 show_age_stats(selected_age_group)
 #***************************************************************************************************
-sns.boxplot(x="sex", y="suicides_no", data=df)
+sns.boxplot(x="sex", y="year", data=df)
 
 # แสดงผลลัพธ์
 plt.show()
