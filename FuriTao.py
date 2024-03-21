@@ -187,29 +187,18 @@ selected_age_group = st.selectbox("เลือกช่วงอายุ", df[
 # เรียกใช้ฟังก์ชันเมื่อมีการเลือกช่วงอายุ
 show_age_stats(selected_age_group)
 #***************************************************************************************************
-# แยกข้อมูลตามเพศ
-df_male = df[df["sex"] == "male"]
-df_female = df[df["sex"] == "female"]
+st.subheader("การเปรียบเทียบค่ามัธยฐานของอัตราการฆ่าตัวตายระหว่างเพศ")
 
-# คำนวณค่ามัธยฐาน
-median_male = df_male["suicides_no"].median()
-median_female = df_female["suicides_no"].median()
+# กรองข้อมูลเพื่อให้ได้เฉพาะข้อมูลที่มีเพศเป็นชายหรือหญิง
+df_filtered = df[df['sex'].isin(['male', 'female'])]
 
-# แสดงผลลัพธ์
-print("ค่ามัธยฐานอัตราการฆ่าตัวตาย - เพศชาย:", median_male)
-print("ค่ามัธยฐานอัตราการฆ่าตัวตาย - เพศหญิง:", median_female)
-
-# กำหนดขนาดกราฟ
-plt.figure(figsize=(10, 6))
-
-# วาด Box Plot
-sns.boxplot(x="sex", data=df)
-
-# ตั้งชื่อแกน
-plt.xlabel("เพศ")
-plt.ylabel("อัตราการฆ่าตัวตาย")
-
-# แสดงกราฟ
-plt.show(plt)
-
+# สร้าง Box-plot เพื่อเปรียบเทียบค่ามัธยฐานของอัตราการฆ่าตัวตายระหว่างเพศ
+plt.figure(figsize=(8, 6))
+df_filtered.boxplot(column='suicides_per_100k_pop', by='sex')
+plt.title('เปรียบเทียบค่ามัธยฐานของอัตราการฆ่าตัวตายระหว่างเพศ')
+plt.xlabel('เพศ')
+plt.ylabel('อัตราการฆ่าตัวตาย (per 100k pop)')
+plt.xticks([1, 2], ['ชาย', 'หญิง'])
+plt.tight_layout()
+st.pyplot()
 #***************************************************************************************************
