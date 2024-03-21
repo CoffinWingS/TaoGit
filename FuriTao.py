@@ -151,7 +151,7 @@ def show_age_stats(age_group):
     death_counts = df_selected_age.groupby('country').size().sort_values(ascending=False)
 
     # แสดงกราฟแท่ง
-    death_counts.plot(kind='bar')
+    death_counts.plot(kind='barh')
     plt.title(f"อัตราการฆ่าตัวตายในช่วงอายุ {age_group}")
     plt.xlabel('ประเทศ')
     plt.ylabel('จำนวนการฆ่าตัวตาย')
