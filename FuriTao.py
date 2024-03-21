@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 
-df=pd.read_csv('./data/masteerrp.csv')
+df=pd.read_csv('./data/Taohu.csv')
 
 st.header("สถิติการฆ่าตัวต่ายในปี 1987 - 2014")
 
