@@ -89,6 +89,20 @@ if(st.button("แบบกราฟเส้น")):
 else:
   st.button("Exit!")
 #***************************************************************************************************
+st.subheader("อัตราการฆ่าตัวตายของเพศชายและเพศหญิง")
+
+# นับจำนวนการฆ่าตัวตายของแต่ละเพศ
+sex_counts = df['sex'].value_counts()
+
+# แสดงข้อมูลในรูปแบบของวงกลม
+plt.figure(figsize=(6, 6))
+plt.pie(sex_counts, labels=sex_counts.index, autopct='%1.1f%%', startangle=140)
+plt.title('อัตราการฆ่าตัวตายของเพศชายและเพศหญิง')
+st.pyplot(plt)
+
+#***************************************************************************************************
+
+
 sex_counts = df['sex'].value_counts()
  # แสดงข้อมูลด้วย Streamlit
 st.title('Counts of Gender in Suicide Dataset')
