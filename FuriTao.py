@@ -187,18 +187,18 @@ selected_age_group = st.selectbox("เลือกช่วงอายุ", df[
 # เรียกใช้ฟังก์ชันเมื่อมีการเลือกช่วงอายุ
 show_age_stats(selected_age_group)
 #***************************************************************************************************
-st.subheader("การเปรียบเทียบค่ามัธยฐานของอัตราการฆ่าตัวตายระหว่างเพศ")
+st.subheader("วิเคราะห์ค่ามัธยฐานของอัตราการฆ่าตัวตายเปรียบเทียบระหว่างเพศและปี")
 
-# กรองข้อมูลเพื่อให้ได้เฉพาะข้อมูลที่มีเพศเป็นชายหรือหญิง
-df_filtered = df[df['sex'].isin(['male', 'female'])]
+# สร้าง Box Plot
+plt.figure(figsize=(10, 6))
+plt.title("Box Plot ของอัตราการฆ่าตัวตายเปรียบเทียบระหว่างเพศและปี")
+plt.xlabel("เพศ")
+plt.ylabel("อัตราการฆ่าตัวตาย")
 
-# สร้าง Box-plot เพื่อเปรียบเทียบค่ามัธยฐานของอัตราการฆ่าตัวตายระหว่างเพศ
-plt.figure(figsize=(8, 6))
-df_filtered.boxplot(column='suicides_per_100k_pop', by='sex')
-plt.title('เปรียบเทียบค่ามัธยฐานของอัตราการฆ่าตัวตายระหว่างเพศ')
-plt.xlabel('เพศ')
-plt.ylabel('อัตราการฆ่าตัวตาย (per 100k pop)')
-plt.xticks([1, 2], ['ชาย', 'หญิง'])
-plt.tight_layout()
+# ใช้ Box Plot ของ Seaborn
+import seaborn as sns
+sns.boxplot(data=df, x='sex', y='suicides/100k pop', hue='year')
+plt.legend(title='ปี', loc='upper right')
+plt.xticks(rotation=45)
 st.pyplot()
 #***************************************************************************************************
