@@ -187,18 +187,19 @@ selected_age_group = st.selectbox("เลือกช่วงอายุ", df[
 # เรียกใช้ฟังก์ชันเมื่อมีการเลือกช่วงอายุ
 show_age_stats(selected_age_group)
 #***************************************************************************************************
-st.subheader("วิเคราะห์ค่ามัธยฐานของอัตราการฆ่าตัวตายเปรียบเทียบระหว่างเพศและปี")
-
-# สร้าง Box Plot
+# สร้าง Box Plot โดยใช้ Matplotlib
 plt.figure(figsize=(10, 6))
-plt.title("Box Plot ของอัตราการฆ่าตัวตายเปรียบเทียบระหว่างเพศและปี")
-plt.xlabel("เพศ")
-plt.ylabel("อัตราการฆ่าตัวตาย")
-
-# ใช้ Box Plot ของ Seaborn
-import seaborn as sns
-sns.boxplot(data=df, x='sex', y='suicides/100k pop', hue='year')
-plt.legend(title='ปี', loc='upper right')
-plt.xticks(rotation=45)
+plt.boxplot([df[df['age'] == '5-14 years']['suicides_no'], 
+             df[df['age'] == '15-24 years']['suicides_no'],
+             df[df['age'] == '25-34 years']['suicides_no'],
+             df[df['age'] == '35-54 years']['suicides_no'],
+             df[df['age'] == '55-74 years']['suicides_no'],
+             df[df['age'] == '75+ years']['suicides_no']],
+            labels=['5-14 years', '15-24 years', '25-34 years', '35-54 years', '55-74 years', '75+ years'])
+plt.title('อัตราการฆ่าตัวตายตามช่วงอายุ')
+plt.xlabel('ช่วงอายุ')
+plt.ylabel('จำนวนการฆ่าตัวตาย')
+plt.xticks(rotation=45, ha='right')
+plt.grid(True)
 st.pyplot()
 #***************************************************************************************************
