@@ -128,11 +128,15 @@ def show_country_stats(country_name):
     # นับจำนวนการฆ่าตัวตายในแต่ละปี
     death_counts = df_selected_country.groupby('year').size()
 
+ # กำหนดฟอนต์สำหรับภาษาไทย
+    font_path = fm.findSystemFonts(fontpaths=None, fontext='ttf')
+    thai_font = fm.FontProperties(fname=font_path[0])
+
     # แสดงกราฟเส้น
     plt.plot(death_counts.index, death_counts.values, marker='o')
-    plt.title(f"อัตราการฆ่าตัวตายในประเทศ {country_name}")
-    plt.xlabel('ปี',fontname='TH Sarabun New')
-    plt.ylabel('จำนวนการฆ่าตัวตาย',fontname='TH Sarabun New')
+    plt.title(f"อัตราการฆ่าตัวตายในประเทศ {country_name}", fontproperties=thai_font)
+    plt.xlabel('ปี', fontproperties=thai_font)
+    plt.ylabel('จำนวนการฆ่าตัวตาย', fontproperties=thai_font)
     plt.grid(True)
     st.pyplot(plt)
 
