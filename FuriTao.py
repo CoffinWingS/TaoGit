@@ -1,7 +1,6 @@
 import streamlit as st
 import matplotlib.pyplot as plt
 import pandas as pd
-import seaborn as sns
 
 
 df=pd.read_csv('./data/FuriTao.csv')
@@ -45,7 +44,7 @@ if(st.button("แสดงกราฟแท่ง")):
  st.pyplot(plt)
  st.button("ปิดข้อมูล")
 else:
- st.button("ปิดข้อมูล")
+   st.button("ปิดไปเลย")
 
 #***************************************************************************************************
 st.subheader("โนมโน้มการฆ่าตัวตายในช่วงปี")
@@ -66,7 +65,7 @@ if(st.button("แสดงโนมโน้มการฆ่าตัวตา
  st.pyplot(plt)
  st.button("ปิดข้อมูล")
 else:
- #st.button("ปิดข้อมูล")
+   st.button("ปิดไป")
 #***************************************************************************************************
 if(st.button("แบบกราฟเส้น")):
  
@@ -88,7 +87,7 @@ if(st.button("แบบกราฟเส้น")):
  st.pyplot(plt)
  st.button("ปิดข้อมูล")
 else:
- st.button("Exit!")
+   st.button("Exit!")
 #***************************************************************************************************
 st.subheader("อัตราการฆ่าตัวตายของเพศชายและเพศหญิง")
 
@@ -182,32 +181,4 @@ def show_age_stats(age_group):
     plt.grid(True)
     st.pyplot(plt)
 
-# เลือกช่วงอายุจาก dropdown
-selected_age_group = st.selectbox("เลือกช่วงอายุ", df['age'].unique())
-
-# เรียกใช้ฟังก์ชันเมื่อมีการเลือกช่วงอายุ
-show_age_stats(selected_age_group)
-#***************************************************************************************************
-#st.subheader("ค่าต่ำสุดและค่าสูงสุดของอัตราการฆ่าตัวตายของเพศชายและเพศหญิง")
-
-# นับจำนวนการฆ่าตัวตายของแต่ละเพศ
-#sex_counts = df.groupby('sex').size()
-
-# แสดงค่าต่ำสุดและค่าสูงสุด
-#min_count = sex_counts.min()
-#max_count = sex_counts.max()
-
-#st.write(f"ค่าต่ำสุด: {min_count}")
-#st.write(f"ค่าสูงสุด: {max_count}")
-
-#st.subheader("การเปรียบเทียบแปรปรวนของอัตราการฆ่าตัวตายในแต่ละปีด้วย Box Plot")
-
-# สร้าง Box Plot เพื่อเปรียบเทียบแปรปรวนของอัตราการฆ่าตัวตายในแต่ละปี
-#plt.figure(figsize=(12, 6))
-#sns.boxplot(x='year', y='suicides_no', hue='sex', data=df)
-#plt.title('การเปรียบเทียบแปรปรวนของอัตราการฆ่าตัวตายในแต่ละปี')
-#plt.xlabel('ปี')
-#plt.ylabel('จำนวนการฆ่าตัวตาย')
-#plt.xticks(rotation=45, ha='right')
-#st.pyplot()
 #***************************************************************************************************
