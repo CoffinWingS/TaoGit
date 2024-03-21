@@ -125,6 +125,7 @@ def show_country_stats(country_name):
     # นับจำนวนการฆ่าตัวตายในแต่ละปี
     death_counts = df_selected_country.groupby('year').size()
 
+
     # แสดงกราฟเส้น
     plt.plot(death_counts.index, death_counts.values, marker='o')
     plt.title(f"Suicide rate in the country!!! {country_name}")
@@ -149,6 +150,16 @@ def show_age_stats(age_group):
 
     # นับจำนวนการฆ่าตัวตายในแต่ละประเทศ
     death_counts = df_selected_age.groupby('country').size().sort_values(ascending=False)
+
+  # ปรับขนาดกราฟ
+ plt.figure(figsize=(22, 50))
+
+ # เพิ่มกริด
+ plt.grid(axis='x')
+
+ # เพิ่มเครื่องหมายบอกค่าบนแท่ง
+ for i, v in enumerate(df_country):
+   plt.text(v, i, f'{v:,}', ha='right', va='center')
 
     # แสดงกราฟแท่ง
     death_counts.plot(kind='barh')
