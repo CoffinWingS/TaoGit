@@ -187,18 +187,8 @@ selected_age_group = st.selectbox("เลือกช่วงอายุ", df[
 # เรียกใช้ฟังก์ชันเมื่อมีการเลือกช่วงอายุ
 show_age_stats(selected_age_group)
 #***************************************************************************************************
-st.subheader("Box-plot ของอัตราการฆ่าตัวตายโดยเฉลี่ยแยกตามประเทศ")
+sns.boxplot(x="sex", y="suicides_no", data=df)
 
-# กรองข้อมูลเพื่อให้ได้เฉพาะปี 1987-2016
-df_filtered = df[(df['year'] >= 1987) & (df['year'] <= 2016)]
-
-# สร้าง Box-plot แยกตามประเทศ
-plt.figure(figsize=(12, 8))
-df_filtered.boxplot(column='sex', by='country', rot=90)
-plt.title('Box-plot ของอัตราการฆ่าตัวตายโดยเฉลี่ยแยกตามประเทศ')
-plt.xlabel('ประเทศ')
-plt.ylabel('อัตราการฆ่าตัวตาย (per 100k pop)')
-plt.xticks(fontsize=8)
-plt.tight_layout()
-st.pyplot()
+# แสดงผลลัพธ์
+plt.show(
 #***************************************************************************************************
