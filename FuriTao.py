@@ -16,40 +16,40 @@ st.subheader("อัตราการฆ่าตัวตายในแต่
 #if(st.button("แสดงกราฟแท่ง")):
 
   # เลือกประเทศ
- selected_country = st.selectbox("เลือกประเทศ", df['country'].unique())
+selected_country = st.selectbox("เลือกประเทศ", df['country'].unique())
 
  # กรองข้อมูลตามประเทศที่เลือก
- filtered_df = df[df['country'] == selected_country]
+filtered_df = df[df['country'] == selected_country]
  # นับจำนวนการฆ่าตัวตายในแต่ละประเทศ
- df_country = df.groupby('country').size()
+df_country = df.groupby('country').size()
 
  # เรียงลำดับประเทศตามจำนวนการฆ่าตัวตาย
- df_country = df_country.sort_values(ascending=False)
+df_country = df_country.sort_values(ascending=False)
 
  # ปรับขนาดกราฟ
- plt.figure(figsize=(22, 50))
+plt.figure(figsize=(22, 50))
 
  # เพิ่มกริด
- plt.grid(axis='x')
+plt.grid(axis='x')
 
  # เพิ่มเครื่องหมายบอกค่าบนแท่ง
- for i, v in enumerate(df_country):
-    plt.text(v, i, f'{v:,}', ha='right', va='center')
+for i, v in enumerate(df_country):
+  plt.text(v, i, f'{v:,}', ha='right', va='center')
 
 
  # แสดงกราฟแท่งแนวนอน
  #plt.barh(df_country.index, df_country, linewidth=3)
- plt.barh(df_country.index, df_country, color='#ff5722')
- plt.xlabel('Furina For Like', fontsize=40)
- plt.ylabel('HuTao for Love', fontsize=40)
- plt.show()
+plt.barh(df_country.index, df_country, color='#ff5722')
+plt.xlabel('Furina For Like', fontsize=40)
+plt.ylabel('HuTao for Love', fontsize=40)
+plt.show()
 
 
  # แสดงกราฟบน Streamlit
- st.pyplot(plt)
+st.pyplot(plt)
  #st.button("ปิดข้อมูล")
 #else:
-    st.button("ปิดไปเลย")
+    #st.button("ปิดไปเลย")
 
 #***************************************************************************************************
 st.subheader("โนมโน้มการฆ่าตัวตายในช่วงปี")
