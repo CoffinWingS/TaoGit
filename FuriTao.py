@@ -14,6 +14,12 @@ st.write(df.head(10))
 st.subheader("อัตราการฆ่าตัวตายในแต่ละประเทศ")
 
 if(st.button("แสดงกราฟแท่ง")):
+
+  # เลือกประเทศ
+ selected_country = st.selectbox("เลือกประเทศ", df['country'].unique())
+
+ # กรองข้อมูลตามประเทศที่เลือก
+ filtered_df = df[df['country'] == selected_country]
  # นับจำนวนการฆ่าตัวตายในแต่ละประเทศ
  df_country = df.groupby('country').size()
 
@@ -51,11 +57,6 @@ st.subheader("โนมโน้มการฆ่าตัวตายในช
 
 if(st.button("แสดงโนมโน้มการฆ่าตัวตายในช่วงปี")):
 
- # เลือกประเทศ
- selected_country = st.selectbox("เลือกประเทศ", df['country'].unique())
-
- # กรองข้อมูลตามประเทศที่เลือก
- filtered_df = df[df['country'] == selected_country]
  # นับจำนวนการฆ่าตัวตายในแต่ละปี
  df_year = df.groupby('year').size()
 
