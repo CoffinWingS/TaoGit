@@ -112,9 +112,6 @@ ax.legend()
 
 st.pyplot(fig)
 #***************************************************************************************************
-st.header("สถิติการฆ่าตัวต่ายในปี 1987 - 2014")
-
-st.write(df.head(10))
 
 st.subheader("อัตราการฆ่าตัวตายในแต่ละประเทศ")
 
@@ -130,9 +127,9 @@ def show_country_stats(country_name):
 
     # แสดงกราฟเส้น
     plt.plot(death_counts.index, death_counts.values, marker='o')
-    plt.title(f"อัตราการฆ่าตัวตายในประเทศ {country_name}")
-    plt.xlabel('ปี')
-    plt.ylabel('จำนวนการฆ่าตัวตาย')
+    plt.title(f"Suicide rate in the country!!! {country_name}")
+    plt.xlabel('YEAR')
+    plt.ylabel('Number Of Suicides')
     plt.grid(True)
     st.pyplot(plt)
 
@@ -142,3 +139,22 @@ selected_country = st.selectbox("เลือกประเทศ", df['country
 # เรียกใช้ฟังก์ชันเมื่อมีการเลือกประเทศ
 show_country_stats(selected_country)
 
+#***************************************************************************************************
+
+# แปลงข้อมูลในคอลัมน์ 'age' เป็นข้อมูลแบบ float
+df['age_start'] = df['age'].apply(lambda x: float(x.split('-')[0].strip()[:-6]))
+df['age_end'] = df['age'].apply(lambda x: float(x.split('-')[1].strip()[:-6]))
+
+# คำนวณหาอายุเฉลี่ย
+df['average_age'] = (df['age_start'] + df['age_end']) / 2
+
+
+st.subheader("อัตราการฆ่าตัวตายในช่วงอายุ")
+
+# แสดงกราฟ
+plt.figure(figsize=(12, 6))
+plt.hist(df['average_age'], bins=10, color='skyblue', edgecolor='black')
+plt.xlabel('อายุ')
+plt.ylabel('จำนวนการฆ่าตัวตาย')
+plt.title('อัตราการฆ่าตัวตายในช่วงอายุ')
+st.pyplot(plt)
