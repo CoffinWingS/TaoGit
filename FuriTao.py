@@ -182,6 +182,15 @@ def show_age_stats(age_group):
     plt.grid(True)
     st.pyplot(plt)
 
+  # แสดงกราฟเส้น
+    plt.plot(death_counts.index, death_counts.values, marker='o')
+    plt.title(f"อัตราการฆ่าตัวตายในช่วงอายุ {age_group}")
+    plt.xlabel('ประเทศ')
+    plt.ylabel('จำนวนการฆ่าตัวตาย')
+    plt.xticks(rotation=45, ha='right')
+    plt.grid(True)
+    st.pyplot(plt)
+
 # เลือกช่วงอายุจาก dropdown
 selected_age_group = st.selectbox("เลือกช่วงอายุ", df['age'].unique())
 
@@ -190,28 +199,4 @@ show_age_stats(selected_age_group)
 
 #***************************************************************************************************
 
-# ฟังก์ชันสำหรับแสดงกราฟเส้นตามช่วงอายุที่เลือก
-def show_age_stats(age_group):
-    plt.figure(figsize=(12, 6))
-
-    # กรองข้อมูลตามช่วงอายุที่เลือก
-    df_selected_age = df[df['age'] == age_group]
-
-    # นับจำนวนการฆ่าตัวตายในแต่ละประเทศ
-    death_counts = df_selected_age.groupby('country').size().sort_values(ascending=False)
-
-    # แสดงกราฟเส้น
-    plt.plot(death_counts.index, death_counts.values, marker='o')
-    plt.title(f"อัตราการฆ่าตัวตายในช่วงอายุ {age_group}")
-    plt.xlabel('ประเทศ')
-    plt.ylabel('จำนวนการฆ่าตัวตาย')
-    plt.xticks(rotation=45, ha='right')
-    plt.grid(True)
-    st.pyplot()
-
-# เลือกช่วงอายุจาก dropdown
-selected_age_group = st.selectbox("เลือกช่วงอายุ", df['age'].unique())
-
-# เรียกใช้ฟังก์ชันเมื่อมีการเลือกช่วงอายุ
-show_age_stats(selected_age_group)
 
