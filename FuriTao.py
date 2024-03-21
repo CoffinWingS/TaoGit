@@ -132,7 +132,7 @@ def show_country_stats(country_name):
     plt.plot(death_counts.index, death_counts.values, marker='o')
     plt.title(f"อัตราการฆ่าตัวตายในประเทศ {country_name}")
     plt.xlabel('ปี')
-    plt.ylabel('จำนวนการฆ่าตัวตาย')
+    plt.ylabel('จำนวนการฆ่าตัวตาย', fontname='Tahoma')
     plt.grid(True)
     st.pyplot(plt)
 
