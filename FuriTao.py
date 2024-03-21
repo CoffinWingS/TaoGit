@@ -158,17 +158,17 @@ def show_age_stats(age_group):
     plt.grid(axis='x')
 
  # เพิ่มเครื่องหมายบอกค่าบนแท่ง
-   for i, v in enumerate(df_country):
-    plt.text(v, i, f'{v:,}', ha='right', va='center')
+    for i, v in enumerate(df_country):
+     plt.text(v, i, f'{v:,}', ha='right', va='center')
 
     # แสดงกราฟแท่ง
-    death_counts.plot(kind='barh')
-    plt.title(f"อัตราการฆ่าตัวตายในช่วงอายุ {age_group}")
-    plt.xlabel('ประเทศ')
-    plt.ylabel('จำนวนการฆ่าตัวตาย')
-    plt.xticks(rotation=45, ha='right')
-    plt.grid(True)
-    st.pyplot(plt)
+     death_counts.plot(kind='barh')
+     plt.title(f"อัตราการฆ่าตัวตายในช่วงอายุ {age_group}")
+     plt.xlabel('ประเทศ')
+     plt.ylabel('จำนวนการฆ่าตัวตาย')
+     plt.xticks(rotation=45, ha='right')
+     plt.grid(True)
+     st.pyplot(plt)
 
 # เลือกช่วงอายุจาก dropdown
     selected_age_group = st.selectbox("เลือกช่วงอายุ", df['age'].unique())
