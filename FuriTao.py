@@ -97,7 +97,7 @@ sex_counts = df['sex'].value_counts()
 # แสดงข้อมูลในรูปแบบของวงกลม
 plt.figure(figsize=(6, 6))
 plt.pie(sex_counts, labels=sex_counts.index, autopct='%1.1f%%', startangle=140)
-plt.title('อัตราการฆ่าตัวตายของเพศชายและเพศหญิง')
+plt.title('Suicide rates for males and females')
 st.pyplot(plt)
 
 #***************************************************************************************************
