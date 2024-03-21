@@ -36,8 +36,8 @@ if(st.button("แสดงกราฟแท่ง")):
  # แสดงกราฟแท่งแนวนอน
  #plt.barh(df_country.index, df_country, linewidth=3)
  plt.barh(df_country.index, df_country, color='#ff5722')
- plt.xlabel('Furina For Like', fontsize=40)
- plt.ylabel('HuTao for Love', fontsize=40)
+ plt.xlabel('body', fontsize=40)
+ plt.ylabel('country', fontsize=40)
  plt.show()
 
 
@@ -188,26 +188,26 @@ selected_age_group = st.selectbox("เลือกช่วงอายุ", df[
 # เรียกใช้ฟังก์ชันเมื่อมีการเลือกช่วงอายุ
 show_age_stats(selected_age_group)
 #***************************************************************************************************
-st.subheader("ค่าต่ำสุดและค่าสูงสุดของอัตราการฆ่าตัวตายของเพศชายและเพศหญิง")
+#st.subheader("ค่าต่ำสุดและค่าสูงสุดของอัตราการฆ่าตัวตายของเพศชายและเพศหญิง")
 
 # นับจำนวนการฆ่าตัวตายของแต่ละเพศ
-sex_counts = df.groupby('sex').size()
+#sex_counts = df.groupby('sex').size()
 
 # แสดงค่าต่ำสุดและค่าสูงสุด
-min_count = sex_counts.min()
-max_count = sex_counts.max()
+#min_count = sex_counts.min()
+#max_count = sex_counts.max()
 
-st.write(f"ค่าต่ำสุด: {min_count}")
-st.write(f"ค่าสูงสุด: {max_count}")
+#st.write(f"ค่าต่ำสุด: {min_count}")
+#st.write(f"ค่าสูงสุด: {max_count}")
 
-st.subheader("การเปรียบเทียบแปรปรวนของอัตราการฆ่าตัวตายในแต่ละปีด้วย Box Plot")
+#st.subheader("การเปรียบเทียบแปรปรวนของอัตราการฆ่าตัวตายในแต่ละปีด้วย Box Plot")
 
 # สร้าง Box Plot เพื่อเปรียบเทียบแปรปรวนของอัตราการฆ่าตัวตายในแต่ละปี
-plt.figure(figsize=(12, 6))
-sns.boxplot(x='year', y='suicides_no', hue='sex', data=df)
-plt.title('การเปรียบเทียบแปรปรวนของอัตราการฆ่าตัวตายในแต่ละปี')
-plt.xlabel('ปี')
-plt.ylabel('จำนวนการฆ่าตัวตาย')
-plt.xticks(rotation=45, ha='right')
-st.pyplot()
+#plt.figure(figsize=(12, 6))
+#sns.boxplot(x='year', y='suicides_no', hue='sex', data=df)
+#plt.title('การเปรียบเทียบแปรปรวนของอัตราการฆ่าตัวตายในแต่ละปี')
+#plt.xlabel('ปี')
+#plt.ylabel('จำนวนการฆ่าตัวตาย')
+#plt.xticks(rotation=45, ha='right')
+#st.pyplot()
 #***************************************************************************************************
