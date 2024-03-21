@@ -93,7 +93,7 @@ sex_counts = df['sex'].value_counts()
  # แสดงข้อมูลด้วย Streamlit
 st.title('Counts of Gender in Suicide Dataset')
 st.write('Counts of Male and Female in Suicide Dataset')
-st.bar_chart(sex_counts)
+#st.bar_chart(sex_counts)
 
  # เพิ่มกราฟเส้นเพื่อแสดงการแยกตามเพศ
 male_data = df[df['sex'] == 'male']
