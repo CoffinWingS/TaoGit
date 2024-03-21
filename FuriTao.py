@@ -134,7 +134,7 @@ def show_country_stats(country_name):
     plt.xlabel('ปี')
     plt.ylabel('จำนวนการฆ่าตัวตาย')
     plt.grid(True)
-    st.pyplot()
+    st.pyplot(plt)
 
 # เลือกประเทศจาก dropdown
 selected_country = st.selectbox("เลือกประเทศ", df['country'].unique())
