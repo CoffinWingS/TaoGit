@@ -112,5 +112,33 @@ ax.legend()
 
 st.pyplot(fig)
 #***************************************************************************************************
+st.header("สถิติการฆ่าตัวต่ายในปี 1987 - 2014")
 
+st.write(df.head(10))
+
+st.subheader("อัตราการฆ่าตัวตายในแต่ละประเทศ")
+
+# ฟังก์ชันสำหรับแสดงกราฟตามประเทศที่เลือก
+def show_country_stats(country_name):
+    plt.figure(figsize=(12, 6))
+
+    # กรองข้อมูลตามประเทศที่เลือก
+    df_selected_country = df[df['country'] == country_name]
+
+    # นับจำนวนการฆ่าตัวตายในแต่ละปี
+    death_counts = df_selected_country.groupby('year').size()
+
+    # แสดงกราฟเส้น
+    plt.plot(death_counts.index, death_counts.values, marker='o')
+    plt.title(f"อัตราการฆ่าตัวตายในประเทศ {country_name}")
+    plt.xlabel('ปี')
+    plt.ylabel('จำนวนการฆ่าตัวตาย')
+    plt.grid(True)
+    st.pyplot()
+
+# เลือกประเทศจาก dropdown
+selected_country = st.selectbox("เลือกประเทศ", df['country'].unique())
+
+# เรียกใช้ฟังก์ชันเมื่อมีการเลือกประเทศ
+show_country_stats(selected_country)
 
