@@ -173,7 +173,7 @@ def show_age_stats(age_group):
    plt.grid(axis='x')
  
     # แสดงกราฟแท่ง
-    death_counts.plot(kind='barh')
+   death_counts.plot(kind='barh')
    plt.title(f"Suicide rates during age {age_group}", fontsize=65)
    plt.xlabel('Country', fontsize=40)
    plt.ylabel('Number of suicides', fontsize=40)
