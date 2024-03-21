@@ -190,5 +190,5 @@ show_age_stats(selected_age_group)
 sns.boxplot(x="sex", y="suicides_no", data=df)
 
 # แสดงผลลัพธ์
-plt.show(
+plt.show()
 #***************************************************************************************************
