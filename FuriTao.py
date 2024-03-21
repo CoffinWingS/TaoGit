@@ -130,9 +130,9 @@ def show_country_stats(country_name):
 
     # แสดงกราฟเส้น
     plt.plot(death_counts.index, death_counts.values, marker='o')
-    plt.title(f"อัตราการฆ่าตัวตายในประเทศ {country_name}")
-    plt.xlabel('ปี')
-    plt.ylabel('จำนวนการฆ่าตัวตาย', fontname='Tahoma')
+    plt.title(f"Suicide rate in the country!!! {country_name}")
+    plt.xlabel('YEAR')
+    plt.ylabel('Number Of Suicides')
     plt.grid(True)
     st.pyplot(plt)
 
