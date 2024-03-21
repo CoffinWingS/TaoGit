@@ -165,13 +165,6 @@ def show_age_stats(age_group):
 
     # นับจำนวนการฆ่าตัวตายในแต่ละประเทศ
     death_counts = df_selected_age.groupby('country').size().sort_values(ascending=False)
-
-
-    # ปรับขนาดกราฟ
-    plt.figure(figsize=(22, 50))
-
-    # เพิ่มกริด
-    plt.grid(axis='x')
  
     # แสดงกราฟแท่ง
     death_counts.plot(kind='barh')
