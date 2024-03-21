@@ -140,21 +140,28 @@ selected_country = st.selectbox("เลือกประเทศ", df['country
 show_country_stats(selected_country)
 
 #***************************************************************************************************
+# ฟังก์ชันสำหรับแสดงกราฟตามช่วงอายุที่เลือก
+def show_age_stats(age_group):
+    plt.figure(figsize=(12, 6))
 
-# แปลงข้อมูลในคอลัมน์ 'age' เป็นข้อมูลแบบ float
-df['age_start'] = df['age'].apply(lambda x: float(x.split('-')[0].strip()[:-6]))
-df['age_end'] = df['age'].apply(lambda x: float(x.split('-')[1].strip()[:-6]))
+    # กรองข้อมูลตามช่วงอายุที่เลือก
+    df_selected_age = df[df['age'] == age_group]
 
-# คำนวณหาอายุเฉลี่ย
-df['average_age'] = (df['age_start'] + df['age_end']) / 2
+    # นับจำนวนการฆ่าตัวตายในแต่ละประเทศ
+    death_counts = df_selected_age.groupby('country').size().sort_values(ascending=False)
 
+    # แสดงกราฟแท่ง
+    death_counts.plot(kind='bar')
+    plt.title(f"อัตราการฆ่าตัวตายในช่วงอายุ {age_group}")
+    plt.xlabel('ประเทศ')
+    plt.ylabel('จำนวนการฆ่าตัวตาย')
+    plt.xticks(rotation=45, ha='right')
+    plt.grid(True)
+    st.pyplot(plt)
 
-st.subheader("อัตราการฆ่าตัวตายในช่วงอายุ")
+# เลือกช่วงอายุจาก dropdown
+selected_age_group = st.selectbox("เลือกช่วงอายุ", df['age'].unique())
 
-# แสดงกราฟ
-plt.figure(figsize=(12, 6))
-plt.hist(df['average_age'], bins=10, color='skyblue', edgecolor='black')
-plt.xlabel('อายุ')
-plt.ylabel('จำนวนการฆ่าตัวตาย')
-plt.title('อัตราการฆ่าตัวตายในช่วงอายุ')
-st.pyplot(plt)
+# เรียกใช้ฟังก์ชันเมื่อมีการเลือกช่วงอายุ
+show_age_stats(selected_age_group)
+
