@@ -160,9 +160,9 @@ def show_age_stats(age_group):
  
     # แสดงกราฟแท่ง
     death_counts.plot(kind='barh')
-    plt.title(f"อัตราการฆ่าตัวตายในช่วงอายุ {age_group}")
-    plt.xlabel('ประเทศ')
-    plt.ylabel('จำนวนการฆ่าตัวตาย')
+    plt.title(f"Suicide rates during age {age_group}", fontsize=65)
+    plt.xlabel('Country', fontsize=40)
+    plt.ylabel('Number of suicides', fontsize=40)
     plt.xticks(rotation=45, ha='right')
     plt.grid(True)
     st.pyplot(plt)
@@ -172,4 +172,4 @@ selected_age_group = st.selectbox("เลือกช่วงอายุ", df[
 
 # เรียกใช้ฟังก์ชันเมื่อมีการเลือกช่วงอายุ
 show_age_stats(selected_age_group)
-
+#***************************************************************************************************
