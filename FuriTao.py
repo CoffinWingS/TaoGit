@@ -168,19 +168,19 @@ def show_age_stats(age_group):
     death_counts = df_selected_age.groupby('country').size().sort_values(ascending=False)
 
  # ปรับขนาดกราฟ
-    plt.figure(figsize=(22, 50))
+    #plt.figure(figsize=(22, 50))
 
     # เพิ่มกริด
-    plt.grid(axis='x')
+    #plt.grid(axis='x')
  
     # แสดงกราฟแท่ง
-    death_counts.plot(kind='barh')
-    plt.title(f"Suicide rates during age {age_group}", fontsize=65)
-    plt.xlabel('Country', fontsize=40)
-    plt.ylabel('Number of suicides', fontsize=40)
-    plt.xticks(rotation=45, ha='right')
-    plt.grid(True)
-    st.pyplot(plt)
+    #death_counts.plot(kind='barh')
+    #plt.title(f"Suicide rates during age {age_group}", fontsize=65)
+    #plt.xlabel('Country', fontsize=40)
+    #plt.ylabel('Number of suicides', fontsize=40)
+    #plt.xticks(rotation=45, ha='right')
+    #plt.grid(True)
+    #st.pyplot(plt)
 
   # แสดงกราฟเส้น
     plt.plot(death_counts.index, death_counts.values, marker='o')
